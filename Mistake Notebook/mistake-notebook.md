@@ -36,6 +36,18 @@ RECHECK
 <!-- Copy this block per entry -->
 
 ## 16th October, 2026
+Merge Two Sorted List | Linked List | IDEA TO LEARN - When we are not sure about which list we should start from, why not create a dummy node and use it to simplify the operation later return its next node as head!(Dummy Node Concept)
+
+---
+
+---
+
+<!-- Copy this block per entry -->
+
+<!-- Copy this block per entry -->
+
+
+## 16th October, 2026
 Two Sum | Math
 IDEA TO LEARN - If we need to traverse the array or any data structure and we have a need of calculating some value at each index and later using it to compare to later values of the array, why not store the calculated value in a hash map with its index as a key and use it whenever required(HASHING concept used).
 
