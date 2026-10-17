@@ -34,6 +34,9 @@ RECHECK
 <!-- Copy this block per entry -->
 
 <!-- Copy this block per entry -->
+---
+When working with subarray sums its very convenient to use prefix sum!(Prefix sum usage) Got this idea from a CF problem.
+---
 
 ## 16th October, 2026
 Merge Two Sorted List | Linked List | IDEA TO LEARN - When we are not sure about which list we should start from, why not create a dummy node and use it to simplify the operation and later return its next node as head!(Dummy Node Concept)
