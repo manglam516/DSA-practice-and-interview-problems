@@ -35,7 +35,26 @@ RECHECK
 
 <!-- Copy this block per entry -->
 <!-- Copy this block per entry -->
+<!-- Copy this block per entry -->
 
+## 18th October, 2026
+Maximum Subarray | Divide and Conquer , Array | Approach - got the right approach of using divide and conquer but forgot to consider the case of crossing subarray(subarrays which have part in both side). Later considered the crossing and got the answer.
+IDEA TO LEARN - If you can divide the problem into smaller parts and solve them at a lower level, do it!(DIVIDE AND CONQUER USE).
+
+BETTER APPROACH - Kadane's Algorithm
+RECHECK - Kadane's Algorithm
+
+---
+
+---
+## 18th October, 2026
+Best time to buy and sell stock | Greedy one pass | Solved using the brute force approach but got TLE, couldnt think about a one pass approach and thats when I came across the idea of greedy one pass |
+
+IDEA TO LEARN - Why not focus on two things. 1 -> consider the lowest seen price at every iteration. 2-> Consider what profit would be obtained if sold on the present day(iteration).(greedy one pass - best solution at every step and use only one traversal) 
+
+---
+
+---
 ## 18th October, 2026
 Binary Tree Inorder Traversal |
 IDENTIFYING THE USE OF HELPER FUNCTION | if your solution needs to maintain some information across recursive calls, you may need a helper function.
