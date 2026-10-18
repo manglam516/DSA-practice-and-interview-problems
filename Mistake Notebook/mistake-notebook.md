@@ -36,6 +36,31 @@ RECHECK
 <!-- Copy this block per entry -->
 <!-- Copy this block per entry -->
 
+## 18th October, 2026
+Binary Tree Inorder Traversal |
+IDENTIFYING THE USE OF HELPER FUNCTION | if your solution needs to maintain some information across recursive calls, you may need a helper function.
+| How can you identify when to use a helper function?
+Look for these hints:
+
+Hint 1: Recursion needs extra parameters
+If the required function has limited parameters, but your recursive logic needs additional information such as a vector, counter, or current path, a helper function is often useful.
+Example: Inorder traversal, path-sum problems.
+
+
+
+
+Hint 2: The problem requires a recursive return value
+Sometimes each recursive call returns information that must be combined, such as the height of a subtree or whether a subtree is balanced. You may use a helper to return that information while the required function returns a different result.
+
+
+
+
+Hint 3: You need to separate setup from repeated work
+If you need to initialize a data structure once and then perform recursive or repeated operations, separating these responsibilities into two functions can make the code simpler.
+
+---
+
+---
 ## 17th October, 2026
 
 When working with subarray sums, its very convenient to use prefix sum(Prefix Sum usage)! Got this idea from a CF problem.
