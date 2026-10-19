@@ -50,42 +50,124 @@ Valid Palindrome | String, Two Pointer |.
 Felt the need to know more functions on string, so here they are:-.
 
 
-1. Common string functions
-Function	What it does	Example
-s.size() / s.length()	Returns length	s.size() → 11
-s.empty()	Checks if string is empty	s.empty() → false
-s[i]	Accesses character at index i	s[0] → 'H'
-s.front()	Returns first character	'H'
-s.back()	Returns last character	'd'
-s.push_back(ch)	Adds a character at the end	s.push_back('!')
-s.pop_back()	Removes last character	Removes 'd'
-s.substr(pos, len)	Extracts a substring	s.substr(0, 5) → "Hello"
-s.find(str)	Finds first occurrence	s.find("World") → 6
-s.erase(pos, len)	Removes characters	s.erase(5, 1)
-s.insert(pos, str)	Inserts a string	s.insert(5, "!")
-s.append(str)	Adds a string at the end	s.append("!")
-s.clear()	Removes all characters	s.clear().
+# C++ String Functions — DSA Quick Reference
 
+## 1. Basic String Operations
 
+| Function | Purpose | Example |
+|---|---|---|
+| `s.size()` / `s.length()` | Returns string length | `s.size()` → `11` |
+| `s.empty()` | Checks if string is empty | `s.empty()` → `false` |
+| `s[i]` | Accesses character at index `i` | `s[0]` → `'H'` |
+| `s.front()` | Returns first character | `s.front()` → `'H'` |
+| `s.back()` | Returns last character | `s.back()` → `'d'` |
+| `s.push_back(ch)` | Adds a character at the end | `s.push_back('!')` |
+| `s.pop_back()` | Removes the last character | `s.pop_back()` |
+| `s.clear()` | Removes all characters | `s.clear()` |
 
-2. Character functions — <cctype>
-These are especially useful for string-based LeetCode problems.
-Function	Purpose	Example
-isalpha(ch)	Checks alphabet	isalpha('A') → true
-isdigit(ch)	Checks digit	isdigit('5') → true
-isalnum(ch)	Checks alphabet or digit	isalnum('7') → true
-islower(ch)	Checks lowercase	islower('a') → true
-isupper(ch)	Checks uppercase	isupper('A') → true
-tolower(ch)	Converts to lowercase	tolower('A') → 'a'
-toupper(ch)	Converts to uppercase	toupper('a') → 'A'
-isspace(ch)	Checks whitespace	isspace(' ') → true.
+## 2. Substring and Editing Functions
 
+| Function | Purpose | Example |
+|---|---|---|
+| `s.substr(pos, len)` | Extracts `len` characters from `pos` | `s.substr(0, 5)` → `"Hello"` |
+| `s.find(str)` | Finds first occurrence | `s.find("World")` → `6` |
+| `s.erase(pos, len)` | Removes characters | `s.erase(5, 1)` |
+| `s.insert(pos, str)` | Inserts text at a position | `s.insert(5, "!")` |
+| `s.append(str)` | Adds text at the end | `s.append("!")` |
+| `s1 == s2` | Checks if two strings are equal | `s1 == s2` |
 
+**Note:** `find()` returns `string::npos` if the substring is not found.
 
-Three things to remember for DSA
-- s.find("abc") returns string::npos if the substring is not found.
-- s.substr(pos, len) takes a starting index and a length, not an ending index.
-- reverse() and sort() require #include <algorithm>.
+```cpp
+if (s.find("abc") == string::npos) {
+    cout << "Not found";
+}
+```
+
+## 3. Character Functions (`<cctype>`)
+
+These functions operate on one character at a time.
+
+| Function | Purpose | Example |
+|---|---|---|
+| `isalpha(ch)` | Checks if character is a letter | `isalpha('A')` |
+| `isdigit(ch)` | Checks if character is a digit | `isdigit('5')` |
+| `isalnum(ch)` | Checks if character is a letter or digit | `isalnum('7')` |
+| `islower(ch)` | Checks for lowercase | `islower('a')` |
+| `isupper(ch)` | Checks for uppercase | `isupper('A')` |
+| `isspace(ch)` | Checks for whitespace | `isspace(' ')` |
+| `tolower(ch)` | Converts uppercase to lowercase | `tolower('A')` → `'a'` |
+| `toupper(ch)` | Converts lowercase to uppercase | `toupper('a')` → `'A'` |
+
+### Convert an entire string to lowercase
+
+```cpp
+for (char &ch : s) {
+    ch = tolower(static_cast<unsigned char>(ch));
+}
+```
+
+## 4. Conversion Functions
+
+| Function | Purpose | Example |
+|---|---|---|
+| `stoi(s)` | Converts string to `int` | `stoi("123")` → `123` |
+| `stoll(s)` | Converts string to `long long` | `stoll("12345678900")` |
+| `to_string(x)` | Converts number to string | `to_string(123)` → `"123"` |
+
+## 5. Algorithms Used with Strings (`<algorithm>`)
+
+| Function | Purpose | Example |
+|---|---|---|
+| `reverse(s.begin(), s.end())` | Reverses string in place | `"abc"` → `"cba"` |
+| `sort(s.begin(), s.end())` | Sorts characters in ascending order | `"cab"` → `"abc"` |
+| `count(s.begin(), s.end(), ch)` | Counts occurrences of a character | `count(s.begin(), s.end(), 'a')` |
+
+## 6. Quick Examples
+
+### Reverse a string
+
+```cpp
+string s = "hello";
+reverse(s.begin(), s.end());
+// s = "olleh"
+```
+
+### Sort a string
+
+```cpp
+string s = "dcab";
+sort(s.begin(), s.end());
+// s = "abcd"
+```
+
+### Check if a character is alphanumeric
+
+```cpp
+char ch = '7';
+
+if (isalnum(static_cast<unsigned char>(ch))) {
+    cout << "Alphanumeric";
+}
+```
+
+### Convert a numeric string to an integer
+
+```cpp
+string s = "123";
+int x = stoi(s);
+```
+
+## 7. Important Notes
+
+- String indices start at `0`.
+- `substr(pos, len)` takes a starting position and a length.
+- `find()` returns `string::npos` if no match exists.
+- `tolower()` and `toupper()` work on one character at a time.
+- `isalpha()`, `isdigit()`, and `isalnum()` check one character at a time.
+- Use `#include <cctype>` for character functions.
+- Use `#include <algorithm>` for `sort()`, `reverse()`, and `count()`.
+- `stoi()` can throw an exception if the input is invalid or out of range.
 
 
 
