@@ -42,7 +42,8 @@ Maximum Subarray | Divide and Conquer , Array | Approach - got the right approac
 IDEA TO LEARN - If you can divide the problem into smaller parts and solve them at a lower level, do it!(DIVIDE AND CONQUER USE).
 
 BETTER APPROACH - Kadane's Algorithm
-RECHECK - Kadane's Algorithm
+ANOTHER APPROACH - Prefix sum(Implement this too).
+RECHECK - Kadane's Algorithm and Prefix Sum approach
 
 ---
 
