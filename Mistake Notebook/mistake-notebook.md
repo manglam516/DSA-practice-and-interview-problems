@@ -32,38 +32,9 @@ RECHECK
 ---
 
 ## 19th October, 2026
-Linked List Cycle II | Linked List |
+Linked List Cycle II | Linked List, Two Pointers |
 IDEA TO LEARN-> It uses a mathematical proof to show that after the first meeting of slow and fast, if slow is moved to the start of the list, and then both are moved 1 step in each iteration, they'll meet again at the starting node of the cycle.
-WHY - 
-
-## Why Do Slow and Fast Meet at the Cycle's Start?
-
-When slow and fast meet inside the cycle, **fast has travelled twice the distance of slow**. Let `L` be the distance from the head to the cycle's start, `x` be the distance from the cycle's start to the meeting point, and `C` be the cycle's length.
-
-### Distance Equation
-
-Let slow travel distance `d`. Then fast travels `2d`.
-
-Since fast has completed some extra full cycles, we can write:
-
-`2d - d = kC`
-
-`d = kC`
-
-Slow's distance is also `d = L + x`, so:
-
-`L + x = kC`
-
-Therefore:
-
-`L = kC - x = (k - 1)C + (C - x)`
-
-This means **the distance from the head to the cycle's start (`L`) equals the distance from the meeting point to the cycle's start (`C - x`), plus some complete cycles**.
-
-### Conclusion
-
-Move slow back to the head and keep fast at the meeting point. Now move both one step at a time. Since their distances to the cycle's start are equal modulo the cycle length, they meet exactly at the **start of the cycle**.
-
+WHY - Check GfG lecture or notes (lecture 42).
 
 ---
 
