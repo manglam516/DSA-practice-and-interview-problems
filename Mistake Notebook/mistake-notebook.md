@@ -31,11 +31,67 @@ RECHECK
 
 ---
 
-<!-- Copy this block per entry -->
+## 19th October, 2026
+Linked List Cycle | Linked List |.
 
-<!-- Copy this block per entry -->
-<!-- Copy this block per entry -->
-<!-- Copy this block per entry -->
+Solved it by altering the values of the list(using INT_MIN as node value to mark it visited). But a better approach should not alter the list contents, and thats when I came across Floyds Cycle Detection Algorithm.
+
+1-> Use two pointers(slow and fast) both initialised to head.
+2-> Move slow one step and fast two steps. If a cycle exists, these pointers are bound to meet, and thats how we know a cycle exists.
+
+---
+
+---
+
+## 19th October, 2026
+Valid Palindrome | String, Two Pointer |.
+
+
+Felt the need to know more functions on string, so here they are:-.
+
+
+1. Common string functions
+Function	What it does	Example
+s.size() / s.length()	Returns length	s.size() → 11
+s.empty()	Checks if string is empty	s.empty() → false
+s[i]	Accesses character at index i	s[0] → 'H'
+s.front()	Returns first character	'H'
+s.back()	Returns last character	'd'
+s.push_back(ch)	Adds a character at the end	s.push_back('!')
+s.pop_back()	Removes last character	Removes 'd'
+s.substr(pos, len)	Extracts a substring	s.substr(0, 5) → "Hello"
+s.find(str)	Finds first occurrence	s.find("World") → 6
+s.erase(pos, len)	Removes characters	s.erase(5, 1)
+s.insert(pos, str)	Inserts a string	s.insert(5, "!")
+s.append(str)	Adds a string at the end	s.append("!")
+s.clear()	Removes all characters	s.clear().
+
+
+
+2. Character functions — <cctype>
+These are especially useful for string-based LeetCode problems.
+Function	Purpose	Example
+isalpha(ch)	Checks alphabet	isalpha('A') → true
+isdigit(ch)	Checks digit	isdigit('5') → true
+isalnum(ch)	Checks alphabet or digit	isalnum('7') → true
+islower(ch)	Checks lowercase	islower('a') → true
+isupper(ch)	Checks uppercase	isupper('A') → true
+tolower(ch)	Converts to lowercase	tolower('A') → 'a'
+toupper(ch)	Converts to uppercase	toupper('a') → 'A'
+isspace(ch)	Checks whitespace	isspace(' ') → true.
+
+
+
+Three things to remember for DSA
+- s.find("abc") returns string::npos if the substring is not found.
+- s.substr(pos, len) takes a starting index and a length, not an ending index.
+- reverse() and sort() require #include <algorithm>.
+
+
+
+---
+
+---
 
 ## 18th October, 2026
 Maximum Subarray | Divide and Conquer , Array | Approach - got the right approach of using divide and conquer but forgot to consider the case of crossing subarray(subarrays which have part in both side). Later considered the crossing and got the answer.
