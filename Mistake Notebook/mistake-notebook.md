@@ -32,6 +32,19 @@ RECHECK
 ---
 
 ## 22 October, 2026
+Minimum Operations to reduce to zero(1658) | Two Pointers, Prefix Sum, Maximum Subarray, Sliding Window |
+IDEA TO LEARN – Instead of removing elements from both ends to reduce `x` to zero, find the longest subarray whose sum equals `total - x`. Use a sliding window with two pointers, expanding the window by moving `right` and shrinking it with `left` while the sum exceeds the target. Track the maximum valid window length and return `n - maxi` (minimum operations). If no valid subarray exists, return `-1`.
+
+Intuition - Why not solve the complement of the actual problem!!
+RECHECK - Solve again a few times and revise this concept!
+
+
+
+---
+
+---
+
+## 22 October, 2026
 Intersection of two linked list | Linked List, Two pointers |.
 My approach was to visit every element and store its node in a vector, and for every element check whether it is already present in the vector, if yes than that is the intersection node.if no, and all the elements are traversed, then no intersection. it took O(m+n) time and O(n) space where n is the length of the larger list.
 BETTER APPROACH IN CONSTANT SPACE = Use two pointers to find the intersection of two linked lists in \(O(n+m)\) time and \(O(1)\) space. When a pointer reaches nullptr, switch it to the head of the other list. This balances the distance travelled by both pointers, making them meet at the intersection node or at nullptr if no intersection exists. Remember: Switch heads instead of moving to next in the same iteration.Both the pointers travel the same distance in this case(m+n).
