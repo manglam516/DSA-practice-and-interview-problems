@@ -31,6 +31,44 @@ RECHECK
 
 ---
 
+## 23 October, 2026;
+Squares of a Sorted Array | Two pointers |
+Idea to Learn - Negative numbers can affect the order of elements. SO why not compare the absolute values and act accordingly. One traversal, O(n) auxiliary space!.
+
+I am not giving enough time to the questions!!!!
+
+---
+
+---
+
+## 23 October, 2026
+Palindrome Linked List | Fast slow pointers, Linked List |.
+My approach - Put elements in and array and then check
+Better approach - Use a composition of 3 things - 1. Find the middle of the list using slow and fast pointers. 2. reverse the second half of the list. 3. compare for the end and the start.
+Idea to learn - I already knew about reaching the middle, reversing the list, and comparing it, but i could not think about using a mix of all these to solve this question!
+
+
+---
+
+---
+
+## 23 October , 2026
+Contains Duplicates | Hashing |.
+
+
+Idea to learn - Set membership means checking whether an element already exists in a set.
+
+In C++, with an unordered_set, you can use .count() or .find() to check membership.
+
+This can be used if we have to deal with duplicate elements.Check for duplicates? - put elements in a set!
+
+
+---
+
+---
+
+
+
 ## 23 October, 2026
 Reverse a linked List | linked list |
 Intuition - Think about changing the links. If somehow you have reversed some part of the list and now are in the middle of it, how are you going to change the link so that the current node is reversed? At the same time making sure that no list is lost.
