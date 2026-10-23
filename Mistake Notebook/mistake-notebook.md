@@ -31,6 +31,13 @@ RECHECK
 
 ---
 
+## 23 October, 2026
+Reverse a linked List | linked list |
+Intuition - Think about changing the links. If somehow you have reversed some part of the list and now are in the middle of it, how are you going to change the link so that the current node is reversed? At the same time making sure that no list is lost.
+---
+
+---
+
 ## 22 October, 2026
 Minimum Operations to reduce to zero(1658) | Two Pointers, Prefix Sum, Maximum Subarray, Sliding Window |
 IDEA TO LEARN – Instead of removing elements from both ends to reduce `x` to zero, find the longest subarray whose sum equals `total - x`. Use a sliding window with two pointers, expanding the window by moving `right` and shrinking it with `left` while the sum exceeds the target. Track the maximum valid window length and return `n - maxi` (minimum operations). If no valid subarray exists, return `-1`.
@@ -49,7 +56,7 @@ Intersection of two linked list | Linked List, Two pointers |.
 My approach was to visit every element and store its node in a vector, and for every element check whether it is already present in the vector, if yes than that is the intersection node.if no, and all the elements are traversed, then no intersection. it took O(m+n) time and O(n) space where n is the length of the larger list.
 BETTER APPROACH IN CONSTANT SPACE = Use two pointers to find the intersection of two linked lists in \(O(n+m)\) time and \(O(1)\) space. When a pointer reaches nullptr, switch it to the head of the other list. This balances the distance travelled by both pointers, making them meet at the intersection node or at nullptr if no intersection exists. Remember: Switch heads instead of moving to next in the same iteration.Both the pointers travel the same distance in this case(m+n).
 
-INTUITION - When two linked list have different lenghts, think about "balancing the distance travelled".
+INTUITION - When two linked list have different lengths, think about "balancing the distance travelled".
 
 
 ---
@@ -68,6 +75,7 @@ Idea to Learn - You should think of a monotonic stack/queue when you want the gr
 Min Stack | Stack, Design |.
 Was a simple question, I should have given it more time, and also i was not confident on the design part syntax as i have not practices OOPS in C++.
 Idea to learn - One thing we can do is store the current minimum along with the value by using a stack which stores a pair(value, minimum so far).
+
 A BETTER APPROACH – Maintain a min variable to track the minimum value so far. When pushing a new minimum, store a modified value (2 * x - min) that is smaller than the new minimum. This helps identify modified values using a simple comparison, allowing us to restore the previous minimum mathematically when the modified value is popped (previous minimum = 2 * current_min - modified_value).
 
 ---
