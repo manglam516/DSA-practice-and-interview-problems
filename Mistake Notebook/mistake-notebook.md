@@ -32,6 +32,81 @@ RECHECK
 ---
 
 ## 1 November, 2026
+
+## Sorting Pairs in C++
+
+Given: `vector<pair<int,int>> v;`
+
+### 1. Default Sorting (First → Second, Ascending)
+```cpp
+sort(v.begin(), v.end());
+```
+- First element ascending.
+- If first elements are equal, second element ascending.
+
+### 2. First Element
+
+**Ascending:**
+```cpp
+sort(v.begin(), v.end(), [](auto a, auto b) {
+    return a.first < b.first;
+});
+```
+
+**Descending:**
+```cpp
+sort(v.begin(), v.end(), [](auto a, auto b) {
+    return a.first > b.first;
+});
+```
+
+### 3. Second Element
+
+**Ascending:**
+```cpp
+sort(v.begin(), v.end(), [](auto a, auto b) {
+    return a.second < b.second;
+});
+```
+
+**Descending:**
+```cpp
+sort(v.begin(), v.end(), [](auto a, auto b) {
+    return a.second > b.second;
+});
+```
+
+### 4. Sorting by Both Elements
+
+**First descending, then second ascending:**
+```cpp
+sort(v.begin(), v.end(), [](auto a, auto b) {
+    if(a.first != b.first)
+        return a.first > b.first;
+    return a.second < b.second;
+});
+```
+
+### 5. Sorting Unordered Map by Value
+
+```cpp
+vector<pair<int,int>> v(mp.begin(), mp.end());
+
+sort(v.begin(), v.end(), [](auto a, auto b) {
+    return a.second > b.second;
+});
+```
+- Useful for frequency-based sorting (Top K Frequent Elements).
+- `unordered_map` itself cannot be sorted.
+
+**Remember:** `a.first` = Key/First element; `a.second` = Value/Second element.
+
+
+---
+
+---
+
+## 1 November, 2026
 Group Anagram | Hashing | .
 Approach - I sorted the first element and compared it with all the other elements after it(sorted) and updated the vector for it.To avoid checking the same element I put its sorted value in an unordered set.
 
