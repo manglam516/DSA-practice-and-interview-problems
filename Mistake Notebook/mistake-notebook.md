@@ -37,6 +37,7 @@ Approach - I sorted the first element and compared it with all the other element
 
 Idea to Learn -  use an unordered_map. where key = canonical form of the element and value = vector of strings corresponding to that canonical form.
 
+Canonical Form Grouping means converting different representations of data into a common, standardized form before hashing so that equivalent items produce the same hash value.
 
 ---
 
