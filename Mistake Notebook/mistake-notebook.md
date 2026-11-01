@@ -31,6 +31,17 @@ RECHECK
 
 ---
 
+## 1 November, 2026
+Group Anagram | Hashing | .
+Approach - I sorted the first element and compared it with all the other elements after it(sorted) and updated the vector for it.To avoid checking the same element I put its sorted value in an unordered set.
+
+Idea to Learn -  use an unordered_map. where key = canonical form of the element and value = vector of strings corresponding to that canonical form.
+
+
+---
+
+---
+
 ## 23 October, 2026;
 Squares of a Sorted Array | Two pointers |
 Idea to Learn - Negative numbers can affect the order of elements. SO why not compare the absolute values and act accordingly. One traversal, O(n) auxiliary space!.
