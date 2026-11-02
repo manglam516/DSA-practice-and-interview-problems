@@ -31,6 +31,33 @@ RECHECK
 
 ---
 
+## 3 November, 2026
+Subarray sum equals k | prefix sum + Hashing |
+Approach - I used a prefix sum array but with it i used two pointers for traversal, but this approach failed because of negative numbers in the array.
+
+Better Approach - The workhorse Pattern (Prefix Sum + HashMap)
+Remember this pattern
+Whenever you see:
+- Subarray sum equals K.
+- Count the number of subarrays.
+- Array contains negative numbers.
+- Sliding window is not directly applicable.
+Think about Prefix Sum + HashMap
+
+It was kind of similar to what I did in the TWO SUM question.
+
+---
+
+---
+
+## 3 November, 2026
+Range Sum Query 2D - Immutable | Prefix Sum |
+Idea to Learn - Calculating prefix sum of a Matrix.
+
+---
+
+---
+
 ## 2 November,2026
 Product of Array Except Self | Prefix Sum |
 Approach - used naive approach, was not able to think of a better solution.Also didnt give much time to the question!
