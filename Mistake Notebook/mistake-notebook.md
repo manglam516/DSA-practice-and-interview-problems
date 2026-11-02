@@ -31,6 +31,32 @@ RECHECK
 
 ---
 
+## 2 November,2026
+Product of Array Except Self | Prefix Sum |
+Approach - used naive approach, was not able to think of a better solution.Also didnt give much time to the question!
+Idea to Learn - if we need the product behind and after that of the element, why not store them and use them in one pass.Creating suffix and prefix array.
+
+---
+
+---
+
+## 2 November, 2026
+Longest Consecutive Sequence | Hashing | 
+Idea to Learn - Here for every element, first we need to see if it is the start of a sequence(by checking the existence of element-1). Then we need to find elements just greater than it by 1 until we cant find one. How can we search for such elements in constant time? (Hashing, using unordered_set).
+
+---
+
+---
+
+## 1 November, 2026
+Top k frequent elements | Hashing |
+Approach - used unordered map to store the frequency, used a pair to sort it and then took the top k elements.
+Idea to Learn - At the place sorting all the elements, why not just keep only the required elements with us(using priority queue).Use a Min Heap and as soon as its size become >k, remove the top element!
+
+---
+
+---
+
 ## 1 November, 2026
 
 ## Sorting Pairs in C++
