@@ -17,8 +17,6 @@ Re-read monthly. Every 4 weeks, count entries per category and drill the largest
 
 ---
 
-<!-- Copy this block per entry -->
-
 ## DATE
 PROBLEM
 CATEGORY
@@ -30,6 +28,26 @@ RECHECK
 ---
 
 ---
+## 3 November, 2026
+Reverse Linked List II | Linked List |
+Approach - I thought of finding out the prior and after node of the sublist. Then reverse the given part of the list. and then attach the head of the reverse sublist to the prior. Used a dummy node as prior of the head. Solved it myself without any help. I am getting better.
+
+---
+
+---
+<!-- Copy this block per entry -->
+
+## 3 November, 2026
+Swap Nodes in Pairs | Linked List |
+Approach - reversed a part while maintaining the prior list and putting on check conditions. Also used dummy node as prior of the head.
+Idea to Learn - It was just pointer play and proper use of it.. Solved it myself! Also gave enough time to the question.
+
+
+---
+
+---
+
+
 
 ## 3 November, 2026
 Subarray sum equals k | prefix sum + Hashing |
