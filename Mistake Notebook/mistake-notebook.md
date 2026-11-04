@@ -28,6 +28,13 @@ RECHECK
 ---
 
 ---
+
+## 4 November, 2026
+A Summary on Linked List - It is one of the easiest topic you can ever think of. There are only few things to keep in mind, and that is the proper manipulation of pointers, THATS IT. It has only few concepts such as finding cycle in the list, middle of the list, reversing the list, blah blah. Now in reversing the list it can give some variations, which you can easily deal with proper use of pointers and simple logic.
+
+---
+
+---
 ## 3 November, 2026
 Reverse Linked List II | Linked List |
 Approach - I thought of finding out the prior and after node of the sublist. Then reverse the given part of the list. and then attach the head of the reverse sublist to the prior. Used a dummy node as prior of the head. Solved it myself without any help. I am getting better.
