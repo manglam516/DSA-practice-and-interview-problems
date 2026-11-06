@@ -29,6 +29,24 @@ RECHECK
 
 ---
 
+## 6 November, 2026
+Copy List with random pointers | Linked List, Hashing |
+Idea - this was some question to think upon. To solve by making clones first(mapping old nodes to new nodes) in an iteration, and then making the connections in the second iteration.
+GREAT question for learning!!
+
+---
+
+---
+
+## 6 November, 2026
+Subarray Sum divisible by K & Continuous Subarray Sum | Hashing + Prefix Sum |
+Idea to Learn - Learnt the idea of normalisation on remainder to keep it in a range. If we dont do that, we may not count all the prefix with the same remainder. Here, -5%4=-1 and 3%4=3 give the same remainder when normalised, that is 3 (((x%k)+k)%k). So count of 3 as remainder should be 2, not 1 and another count for -1 remainder as 1;
+Also in the other question, if we had to take a subarray of more than size 2, we would have to cretae a prefix array first and put some conditions to satisfy the minimum size criteria while iterating over the prefix array in the second pass.
+
+---
+
+---
+
 ## 4 November, 2026
 A Summary on Linked List - It is one of the easiest topic you can ever think of. There are only few things to keep in mind, and that is the proper manipulation of pointers, THATS IT. It has only few concepts such as finding cycle in the list, middle of the list, reversing the list, blah blah. Now in reversing the list it can give some variations, which you can easily deal with proper use of pointers and simple logic.
 
