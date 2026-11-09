@@ -30,6 +30,80 @@ RECHECK
 ---
 
 ## 9 November, 2026
+# LeetCode 23 – Merge K Sorted Lists (Min-Heap)
+
+## Algorithm
+
+1. Insert the first node of every non-empty list into the min-heap.
+2. Extract the smallest node from the min-heap.
+3. Attach this node to the merged linked list.
+4. Insert the extracted node's `next` into the min-heap, if it exists.
+5. Repeat until the priority queue becomes empty.
+
+## Custom Comparator Using Lambda
+
+```cpp
+auto cmp = [](ListNode* a, ListNode* b) {
+    return a->val > b->val;
+};
+```
+
+- `[]` – Lambda capture list.
+- `ListNode* a, ListNode* b` – Two nodes being compared.
+- **The comparator answers: Should `a` come after `b` in terms of priority?**
+- `a->val > b->val` – Gives smaller values higher priority.
+- This creates a **min-heap**.
+
+## Priority Queue Declaration
+
+```cpp
+priority_queue<ListNode*, vector<ListNode*>, decltype(cmp)> pq(cmp);
+```
+
+Breaking it down:
+
+| Part | Meaning |
+|---|---|
+| `ListNode*` | Type of elements stored in the priority queue |
+| `vector<ListNode*>` | Underlying container |
+| `decltype(cmp)` | Gets the type of the lambda comparator |
+| `pq(cmp)` | Passes the actual comparator object to the priority queue |
+
+### Important: `decltype` vs `cmp`
+
+- `decltype(cmp)` → Tells the compiler the **type** of the comparator.
+- `cmp` → The actual comparator object.
+- `pq(cmp)` → Initializes the priority queue with that comparator.
+
+We use `decltype` because every lambda has its own unique compiler-generated type.
+
+## Comparator Revision
+
+| Comparator | Heap type | Top element |
+|---|---|---|
+| `a->val > b->val` | Min-heap | Smallest |
+| `a->val < b->val` | Max-heap | Largest |
+
+## Complexity
+
+Let:
+- N = Total number of nodes.
+- K = Number of linked lists.
+
+- **Time Complexity:** \(O(N\log K)\)
+- **Auxiliary Space Complexity:** \(O(K)\)
+
+## Key Insight
+
+Since every individual linked list is already sorted, we only need to maintain its current smallest available node in the priority queue.
+
+Therefore, at most K nodes are stored in the heap at any time, instead of inserting all N nodes upfront.
+
+---
+
+---
+
+## 9 November, 2026
 # Custom Comparators in C++
 
 ## 1. Introduction
