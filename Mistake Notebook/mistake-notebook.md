@@ -29,6 +29,82 @@ RECHECK
 
 ---
 
+## 9 November, 2026
+# Custom Comparators in C++
+
+## 1. Introduction
+
+A comparator answers one question:
+
+**Should `a` come before `b`?**
+
+In C++, we generally write custom comparators using either:
+- Lambda functions
+- Separate comparator functions
+
+## 2. Basic Syntax
+
+```cpp
+sort(v.begin(), v.end(), [&](int a, int b) {
+    return a < b;
+});
+```
+
+### Understanding the Comparator
+
+- `a` and `b` are two elements being compared.
+- `return true` means `a` should come before `b`.
+- `return false` means `a` should not come before `b`.
+
+## 3. Multiple Conditions in a Comparator
+
+This is one of the most important applications of custom comparators.
+
+**Example:** Suppose we have pairs `{first, second}`.
+
+Requirements:
+1. Sort by the `first` element in descending order.
+2. If the `first` elements are equal, sort by the `second` element in ascending order.
+
+### Code
+
+```cpp
+sort(v.begin(), v.end(), [&](auto a, auto b) {
+
+    if(a.first != b.first)
+        return a.first > b.first;
+
+    return a.second < b.second;
+});
+```
+
+### Explanation
+
+- First, compare the `first` elements.
+- If they are different, the larger `first` element comes first.
+- If they are equal, compare the `second` elements.
+- The smaller `second` element comes first.
+
+**Remember:** The first condition handles the primary sorting criterion, while the remaining conditions handle tie-breaking.
+
+## 4. How to Approach Any Custom Comparator Problem
+
+Whenever you encounter a sorting problem, follow these steps:
+
+1. **Identify the elements:** Understand what you are sorting (integers, pairs, strings, objects, etc.).
+2. **Identify the primary condition:** Determine the main sorting criterion.
+3. **Identify tie-breaking conditions:** Determine what happens when two elements are equal according to the primary condition.
+4. **Convert conditions into return statements:** Write each sorting rule inside the comparator.
+5. **Remember the return rule:** `true` means the first argument should come before the second.
+
+## 5. Important Note
+
+- Always use strict comparisons (`<` or `>`), not `<=` or `>=`.
+- The comparator must follow **Strict Weak Ordering** for `sort()` to work correctly.
+---
+
+---
+
 ## 6 November, 2026
 Copy List with random pointers | Linked List, Hashing |
 Idea - this was some question to think upon. To solve by making clones first(mapping old nodes to new nodes) in an iteration, and then making the connections in the second iteration.
