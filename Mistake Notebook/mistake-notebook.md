@@ -29,6 +29,35 @@ RECHECK
 
 ---
 
+## 10 November, 2026
+## LeetCode 525 – Contiguous Array
+
+**Approach: Prefix Sum + HashMap**
+
+Convert `0` to `-1` and keep `1` as `+1`. Now, the problem becomes finding the longest subarray with sum `0`. Maintain a running prefix sum and store the first occurrence of each prefix sum in a HashMap. If the same prefix sum appears again, the elements between those two indices have a sum of zero, meaning equal numbers of `0`s and `1`s. Calculate the maximum length using the difference between the current index and the first occurrence.
+
+## LeetCode 1371 – Find the Longest Substring Containing Vowels in Even Counts
+
+**Approach: Bitmasking + Prefix XOR + HashMap**
+
+Use a 5-bit mask to represent the parity (odd/even) of the frequencies of the five vowels (`a, e, i, o, u`). Initially, all bits are zero. Whenever a vowel appears, toggle its corresponding bit using XOR. Store the earliest index at which each mask occurs in a HashMap. If the same mask appears again, the substring between those positions contains every vowel an even number of times. Keep track of the maximum length. Consonants do not affect the mask.
+
+## LeetCode 152 – Maximum Product Subarray
+
+**Approach: Dynamic Programming (Kadane's Variation)**
+
+Maintain two variables, `currMax` and `currMin`, representing the maximum and minimum products of subarrays ending at the current index. We need both because multiplying two negative numbers can produce a large positive product. If the current element is negative, swap `currMax` and `currMin`. Then update them using `currMax = max(nums[i], currMax * nums[i])` and `currMin = min(nums[i], currMin * nums[i])`. Starting a new subarray is also considered at every index. Maintain a global answer using `currMax`.
+
+## LeetCode 918 – Maximum Sum Circular Subarray
+
+**Approach: Kadane's Algorithm + Minimum Subarray Sum**
+
+The maximum circular subarray is either a normal maximum subarray or a wrapping subarray. Find the normal maximum subarray sum using Kadane's algorithm. For the wrapping case, observe that the required subarray is everything except the minimum-sum subarray, so its sum is `totalSum - minSum`. Maintain maximum and minimum Kadane calculations simultaneously along with the total array sum. The final answer is `max(maxSum, totalSum - minSum)`. Handle the all-negative case separately by returning `maxSum`, since otherwise the wrapping calculation would incorrectly give zero (an empty subarray).
+
+---
+
+---
+
 ## 9 November, 2026
 # LeetCode 23 – Merge K Sorted Lists (Min-Heap)
 
