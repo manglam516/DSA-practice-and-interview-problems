@@ -29,6 +29,180 @@ RECHECK
 
 ---
 
+## 11 November, 2026
+# Index Marking & Cyclic Sort – DSA Revision
+
+## 1. Index Marking Technique
+
+### Core Idea
+Use the array itself to mark whether a number has been visited, instead of creating an additional `set` or `map`.
+
+- Every number `x` corresponds to index `x - 1`.
+- Negate the element at that index to mark that `x` has been visited.
+- If the element is already negative, `x` has appeared before, so it is a duplicate.
+
+### General Template
+
+```cpp
+for(int i = 0; i < n; i++)
+{
+    int idx = abs(nums[i]) - 1;
+
+    if(nums[idx] < 0)
+    {
+        // Duplicate found
+    }
+    else
+    {
+        nums[idx] = -nums[idx];
+    }
+}
+```
+
+### Example
+
+```cpp
+nums = [4, 3, 2, 7, 8, 2, 3, 1]
+```
+
+When we encounter `2` for the first time:
+- Corresponding index = `2 - 1 = 1`.
+- Make `nums[1]` negative.
+
+When we encounter `2` again:
+- `nums[1]` is already negative.
+- Therefore, `2` is a duplicate.
+
+### Important Points
+- Always use `abs(nums[i]) - 1`, NOT `abs(nums[i] - 1)`.
+- The absolute value is necessary because the current element itself might have been negated earlier.
+- Usually works when numbers are in the range `[1, n]`.
+- Modifies the original array.
+
+### Complexity
+- Time: `O(n)`
+- Auxiliary space: `O(1)` (excluding the answer vector).
+
+**Typical Problems:**
+- LeetCode 442 – Find All Duplicates in an Array
+- LeetCode 448 – Find All Numbers Disappeared in an Array
+
+---
+
+## 2. Cyclic Sort
+
+### Core Idea
+Place every number at its correct index by swapping elements.
+
+For an array containing numbers in the range `[1, n]`:
+
+| Number | Correct Index |
+|---|---|
+| 1 | 0 |
+| 2 | 1 |
+| 3 | 2 |
+| x | x - 1 |
+
+Instead of sorting the array using comparison-based sorting, directly place each number at its correct position.
+
+### General Template
+
+```cpp
+int i = 0;
+
+while(i < n)
+{
+    int idx = nums[i] - 1;
+
+    if(nums[i] > 0 && nums[i] <= n && nums[i] != nums[idx])
+    {
+        swap(nums[i], nums[idx]);
+    }
+    else
+    {
+        i++;
+    }
+}
+```
+
+### Example
+
+```cpp
+nums = [3, 1, 2]
+```
+
+**Step 1:** `3` belongs at index `2`.
+
+Swap index `0` and index `2`.
+
+```cpp
+[2, 1, 3]
+```
+
+**Step 2:** `2` belongs at index `1`.
+
+Swap index `0` and index `1`.
+
+```cpp
+[1, 2, 3]
+```
+
+All numbers are now at their correct positions.
+
+### Important Points
+- Use `nums[i] - 1` to calculate the correct index.
+- Swap until the current element reaches its correct position.
+- Increment `i` only when the current element is already correctly placed or cannot be placed.
+- The condition `nums[i] != nums[idx]` prevents infinite swapping when duplicates exist.
+- Usually useful when numbers lie in `[1, n]`.
+
+### Complexity
+- Time: `O(n)` because every successful swap places an element at its correct position.
+- Auxiliary space: `O(1)`.
+
+**Typical Problems:**
+- LeetCode 41 – First Missing Positive
+- LeetCode 268 – Missing Number
+- LeetCode 287 – Find the Duplicate Number
+- LeetCode 442 – Find All Duplicates in an Array
+- LeetCode 448 – Find All Numbers Disappeared in an Array
+- LeetCode 645 – Set Mismatch
+
+---
+
+## 3. Quick Comparison
+
+| Property | Index Marking | Cyclic Sort |
+|---|---|---|
+| Main operation | Negation | Swapping |
+| Uses original array | Yes | Yes |
+| Time complexity | O(n) | O(n) |
+| Auxiliary space | O(1) | O(1) |
+| Main purpose | Mark visited numbers | Place numbers at correct indices |
+| Handles duplicates | Yes | Yes, with proper checks |
+
+## 4. How to Identify These Patterns?
+
+Look for these clues in a problem:
+
+- Array contains `n` elements.
+- Numbers lie within `[1, n]` or a similar bounded range.
+- Asked to find duplicates.
+- Asked to find missing numbers.
+- Asked to find the smallest missing positive integer.
+- O(n) time and O(1) auxiliary space are required.
+
+**Remember:**
+
+- Index Marking = Use the sign of an element to remember whether a number has appeared.
+- Cyclic Sort = Keep swapping numbers until they reach their correct indices.
+
+Both techniques exploit the relationship between a number and its corresponding array index.
+
+---
+
+---
+
 ## 10 November, 2026
 ## LeetCode 525 – Contiguous Array
 
