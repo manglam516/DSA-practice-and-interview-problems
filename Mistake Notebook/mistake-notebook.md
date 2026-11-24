@@ -29,6 +29,27 @@ RECHECK
 
 ---
 
+---
+
+## 24 November, 2026
+### Intuition & Approach
+The goal is to find the smallest permutation that is strictly greater than the current permutation. To achieve this, traverse from right to left and find the first index `i` where `nums[i] < nums[i+1]` (pivot). Everything to its right is in descending order, meaning it is already the largest possible arrangement of that suffix. Next, traverse again from the right and find the first element greater than the pivot; since the suffix is descending, this is the smallest element greater than the pivot. Swap these two elements to create the smallest possible increase. Finally, reverse the suffix after the pivot to arrange it in ascending order, making the overall permutation as small as possible. If no pivot exists, the entire array is in descending order (the largest permutation), so simply reverse the whole array to obtain the smallest permutation.
+
+---
+
+---
+
+## 24 November, 2026
+### Intuition & Approach
+The problem requires implementing insertion, deletion, and random retrieval, all in O(1) average time. Use a `vector` to store elements (for O(1) random access) and an `unordered_map` to store each element's index in the vector (for O(1) average lookup). For deletion, instead of deleting an element from the middle of the vector (which takes O(n)), swap it with the last element, update the map with the new index, then use `pop_back()` and erase the element from the map.
+
+### Random Number Generation
+Use `mt19937 gen{random_device{}()}` to initialize a pseudo-random number generator with a seed. Use `uniform_int_distribution<int> dist(0, v.size()-1)` to define an inclusive range of valid vector indices, where every index has an equal probability of being selected. Generate a random index using `int idx = dist(gen)` and return `v[idx]`. This ensures every element has an equal probability of being selected, while `getRandom()` takes O(1) time.
+
+---
+
+---
+
 ## 11 November, 2026
 # Index Marking & Cyclic Sort – DSA Revision
 
