@@ -30,6 +30,31 @@ RECHECK
 ---
 
 ---
+## 25 November,2026
+## Two Pointers – Intuition & Pattern Revision
+
+- **LC 167 – Two Sum II:** The important observation is that a sorted array gives us direction. Moving from the left increases the value, while moving from the right decreases it. Remember: sorting helps eliminate unnecessary search possibilities.
+
+- **LC 15 – 3Sum:** A triplet problem can often be reduced to a pair problem by fixing one element. Remember that sorting helps with both pointer movement and duplicate handling. Duplicate values are adjacent after sorting, so we can skip them without using an extra set.
+
+- **LC 16 – 3Sum Closest:** Similar to 3Sum, but the objective changes from finding an exact match to minimizing the difference from a target. Remember to maintain the best answer seen so far. Exact matches are the ideal stopping condition.
+
+- **LC 611 – Valid Triangle Number:** The triangle inequality is the key mathematical observation: the sum of the two smaller sides must be strictly greater than the largest side. Remember that sorting helps identify the largest side and that one valid comparison can sometimes establish the validity of an entire range of combinations. Also, count index combinations, not unique value combinations.
+
+- **LC 11 – Container With Most Water:** The key intuition is that area depends on both width and the smaller of the two heights. Remember that the shorter boundary is the limiting factor. Increasing the width is not always beneficial if the limiting height remains unchanged or decreases.
+
+### General Two-Pointer Takeaways
+
+1. **Sorting creates direction:** Before using two pointers, check whether sorting can make pointer movement predictable.
+2. **Eliminate possibilities:** Every pointer movement should have a logical reason for discarding a range of candidates.
+3. **Fix and reduce:** For triplet problems, fixing one element often reduces the remaining problem to a pair-search problem.
+4. **Exploit monotonicity:** Understand how changing a pointer affects the sum, difference, width, or other objective.
+5. **Count ranges:** Sometimes one valid comparison proves multiple combinations valid. Don't unnecessarily check each combination individually.
+6. **Duplicates:** Understand whether the problem wants unique value combinations or counts of index combinations. These are different requirements.
+7. **Objective matters:** Finding an exact match, finding the closest match, counting valid combinations, and maximizing an area may use similar pointer patterns but require different update logic.
+
+
+---
 
 ## 24 November, 2026
 ### Intuition & Approach
